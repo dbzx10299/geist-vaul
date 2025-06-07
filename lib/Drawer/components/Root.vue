@@ -73,6 +73,7 @@ export type DialogProps = {
 const {
   open: openProp = undefined,
   onOpenChange,
+  // @ts-ignore
   onDrag: onDragProp,
   onRelease: onReleaseProp,
   closeThreshold = CLOSE_THRESHOLD,
