@@ -10,13 +10,13 @@
     "dialog",
     "modal"
   ],
-  "homepage": "https://github.com/dbzx10299/vue-vaul#readme",
+  "homepage": "https://github.com/dbzx10299/geist-vaul#readme",
   "bugs": {
-    "url": "https://github.com/dbzx10299/vue-vaul/issues"
+    "url": "https://github.com/dbzx10299/geist-vaul/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dbzx10299/vue-vaul.git"
+    "url": "git+https://github.com/dbzx10299/geist-vaul.git"
   },
   "sideEffects": [
     "**/*.css"
