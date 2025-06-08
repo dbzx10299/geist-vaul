@@ -1,6 +1,6 @@
 {
   "name": "geist-vaul",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A minimal drawer component for Vue",
   "type": "module",
   "license": "MIT",
