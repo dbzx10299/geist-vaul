@@ -14,12 +14,12 @@
   animation-name: slideToBottom;
 }
 
-[data-vaul-overlay] {
+[data-vaul-overlay][data-vaul-snap-points='false'] {
   animation-duration: .5s;
   animation-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
 }
 
-[data-vaul-overlay][data-state='open'] {
+[data-vaul-overlay][data-vaul-snap-points='false'][data-state='open'] {
   animation-name: fadeIn;
 }
 
