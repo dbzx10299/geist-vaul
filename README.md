@@ -1,6 +1,6 @@
 # Geist Vaul
 
-A Vue drawer component ported from [Vaul](https://github.com/emilkowalski/vaul).
+Geist Vaul is the same drawer as [Vue Vaul](https://www.npmjs.com/package/vue-vaul) but more lightweight and with less options. Compared with Vue Vaul, Geist Vaul does not have the option to nest drawers, does not support snap points, and does not support different directions.
 
 ## Install
 
