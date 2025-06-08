@@ -45,6 +45,7 @@ watch(isOpen, async open => {
     @mouseup="onMouseUp"
     ref="overlayRef"
     data-vaul-overlay=""
+    data-vaul-snap-points="false"
     :data-vaul-animate="shouldAnimate ? 'true' : 'false'"
   />
 </template>
