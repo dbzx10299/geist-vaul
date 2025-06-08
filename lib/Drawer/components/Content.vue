@@ -56,6 +56,7 @@ function handleOnPointerUp(event: PointerEvent | null) {
 <template>
   <DialogContent
     data-vaul-drawer=""
+    data-vaul-snap-points="false"
     :data-vaul-animate="shouldAnimate ? 'true' : 'false'"
     ref="drawerRef"
     @pointerdown="(event: PointerEvent) => {

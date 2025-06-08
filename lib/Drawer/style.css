@@ -6,10 +6,11 @@
   animation-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
 }
 
-[data-vaul-drawer][data-state='open'] {
+
+[data-vaul-drawer][data-vaul-snap-points='false'][data-state='open'] {
   animation-name: slideFromBottom;
 }
-[data-vaul-drawer][data-state='closed'] {
+[data-vaul-drawer][data-vaul-snap-points='false'][data-state='closed'] {
   animation-name: slideToBottom;
 }
 
@@ -17,9 +18,11 @@
   animation-duration: .5s;
   animation-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
 }
+
 [data-vaul-overlay][data-state='open'] {
   animation-name: fadeIn;
 }
+
 [data-vaul-overlay][data-state='closed'] {
   animation-name: fadeOut;
 }
