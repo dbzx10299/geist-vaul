@@ -14,7 +14,7 @@
 }
 
 [data-vaul-overlay] {
-  animation-duration: 0.5s;
+  animation-duration: .5s;
   animation-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
 }
 [data-vaul-overlay][data-state='open'] {
@@ -26,15 +26,6 @@
 
 [data-vaul-animate='false'] {
   animation: none !important;
-}
-
-[data-vaul-overlay] {
-  opacity: 0;
-  transition: opacity 0.5s cubic-bezier(0.32, 0.72, 0, 1);
-}
-
-[data-vaul-overlay]:not([data-state='closed']) {
-  opacity: 1;
 }
 
 [data-vaul-drawer]::after {

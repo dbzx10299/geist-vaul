@@ -4,7 +4,14 @@ import { DialogOverlay } from 'reka-ui'
 import { useRemoveScroll } from 'vue-remove-scroll'
 import type { DrawerContext } from '../types'
 
-const { drawerRef, overlayRef, onRelease, isOpen, modal, shouldAnimate } = inject('drawerContext') as DrawerContext;
+const {
+  drawerRef,
+  overlayRef,
+  onRelease,
+  isOpen,
+  modal,
+  shouldAnimate
+} = inject('drawerContext') as DrawerContext;
 
 const onMouseUp = (event: PointerEvent) => onRelease(event)
 
