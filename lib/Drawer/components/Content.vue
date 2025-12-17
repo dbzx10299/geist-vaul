@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import { ref, inject } from 'vue'
 import { DialogContent } from 'reka-ui'
-import type { DrawerContext } from '../types';
+import { inject, ref } from 'vue'
+import { DrawerContextKey } from '../types.ts'
 
-type ContentProps = {
-  onPointerDownOutside?: (event: PointerEvent) => void;
-  onOpenAutoFocus?: (event: PointerEvent) => void;
-  onPointerDown?: (event: PointerEvent) => void;
-  onPointerMove?: (event: PointerEvent) => void;
-  onPointerUp?: (event: PointerEvent) => void;
-  onPointerOut?: (event: PointerEvent) => void;
+interface ContentProps {
+  onPointerDownOutside?: (event: PointerEvent) => void
+  onOpenAutoFocus?: (event: PointerEvent) => void
+  onPointerDown?: (event: PointerEvent) => void
+  onPointerMove?: (event: PointerEvent) => void
+  onPointerUp?: (event: PointerEvent) => void
+  onPointerOut?: (event: PointerEvent) => void
 }
 
 const { onPointerDownOutside, onOpenAutoFocus, ...rest } = defineProps<ContentProps>()
@@ -24,41 +24,42 @@ const {
   handleOnly,
   shouldAnimate,
   autoFocus,
-} = inject('drawerContext') as DrawerContext;
+} = inject(DrawerContextKey)!
 // Needed to use transition instead of animations
-const pointerStartRef = ref<{ x: number; y: number } | null>(null);
-const lastKnownPointerEventRef = ref<PointerEvent | null>(null);
-const wasBeyondThePointRef = ref(false);
+const pointerStartRef = ref<{ x: number, y: number } | null>(null)
+const lastKnownPointerEventRef = ref<PointerEvent | null>(null)
+const wasBeyondThePointRef = ref(false)
 
-const isDeltaInDirection = (delta: { x: number; y: number }, threshold = 0) => {
-  if (wasBeyondThePointRef.value) return true;
+function isDeltaInDirection(delta: { x: number, y: number }, threshold = 0) {
+  if (wasBeyondThePointRef.value)
+    return true
 
-  const deltaY = Math.abs(delta.y);
-  const deltaX = Math.abs(delta.x);
-  const isDeltaX = deltaX > deltaY;
+  const deltaY = Math.abs(delta.y)
+  const deltaX = Math.abs(delta.x)
+  const isDeltaX = deltaX > deltaY
 
-  const isReverseDirection = delta.y < 0;
+  const isReverseDirection = delta.y < 0
   if (!isReverseDirection && deltaY >= 0 && deltaY <= threshold) {
-    return !isDeltaX;
+    return !isDeltaX
   }
 
-  wasBeyondThePointRef.value = true;
-  return true;
-};
+  wasBeyondThePointRef.value = true
+  return true
+}
 
 function handleOnPointerUp(event: PointerEvent | null) {
-  pointerStartRef.value = null;
-  wasBeyondThePointRef.value = false;
-  onRelease(event);
+  pointerStartRef.value = null
+  wasBeyondThePointRef.value = false
+  onRelease(event)
 }
 </script>
 
 <template>
   <DialogContent
+    ref="drawerRef"
     data-vaul-drawer=""
     data-vaul-snap-points="false"
     :data-vaul-animate="shouldAnimate ? 'true' : 'false'"
-    ref="drawerRef"
     @pointerdown="(event: PointerEvent) => {
       if (handleOnly) return;
       rest.onPointerDown?.(event);
@@ -82,14 +83,14 @@ function handleOnPointerUp(event: PointerEvent | null) {
         pointerStartRef = null;
       }
     }"
-    @openAutoFocus="e => {
+    @open-auto-focus="e => {
       onOpenAutoFocus?.(e as any);
 
       if (!autoFocus) {
         e.preventDefault();
       }
     }"
-    @pointerDownOutside="(e) => {
+    @pointer-down-outside="(e) => {
       onPointerDownOutside?.(e as any);
 
       if (!modal || e.defaultPrevented) {
@@ -111,13 +112,13 @@ function handleOnPointerUp(event: PointerEvent | null) {
       rest.onPointerOut?.(event);
       handleOnPointerUp(lastKnownPointerEventRef);
     }"
-    @focusOutside="(e) => {
+    @focus-outside="(e) => {
       if (!modal) {
         e.preventDefault();
         return;
       }
     }"
   >
-    <slot/>
+    <slot />
   </DialogContent>
 </template>

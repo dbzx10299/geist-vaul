@@ -1,18 +1,29 @@
-
 import {
+  DialogClose,
   DialogDescription,
   DialogTitle,
-  DialogClose,
   DialogTrigger,
 } from 'reka-ui'
 
-import Root from './components/Root.vue'
 import Content from './components/Content.vue'
+import Handle from './components/Handle.vue'
 import Overlay from './components/Overlay.vue'
 import Portal from './components/Portal.vue'
-import Handle from './components/Handle.vue'
+import Root from './components/Root.vue'
 
-export const Drawer = {
+interface DrawerNamespace {
+  Root: typeof Root
+  Content: typeof Content
+  Overlay: typeof Overlay
+  Trigger: typeof DialogTrigger
+  Portal: typeof Portal
+  Handle: typeof Handle
+  Close: typeof DialogClose
+  Title: typeof DialogTitle
+  Description: typeof DialogDescription
+}
+
+export const Drawer: DrawerNamespace = {
   Root,
   Content,
   Overlay,
@@ -22,4 +33,4 @@ export const Drawer = {
   Close: DialogClose,
   Title: DialogTitle,
   Description: DialogDescription,
-};
+}
