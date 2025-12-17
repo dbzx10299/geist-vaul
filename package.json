@@ -37,17 +37,22 @@
     "dev": "vite",
     "build": "vue-tsc -b ./tsconfig.lib.json && vite build",
     "preview": "vite preview",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "lint": "eslint 'lib/**/*.{js,ts,vue,css}'",
+    "lint:fix": "eslint 'lib/**/*.{js,ts,vue,css}' --fix"
   },
   "dependencies": {
     "reka-ui": "^2.2.1",
     "vue-remove-scroll": "^1.0.2"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^6.7.1",
     "@tailwindcss/vite": "^4.1.8",
     "@types/node": "^22.15.29",
     "@vitejs/plugin-vue": "^5.2.3",
     "@vue/tsconfig": "^0.7.0",
+    "eslint": "^9.39.2",
+    "eslint-plugin-format": "^1.1.0",
     "postcss-media-minmax": "^5.0.0",
     "shiki": "^3.6.0",
     "tailwindcss": "^4.1.8",
