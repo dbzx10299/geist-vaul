@@ -11,19 +11,7 @@ import Overlay from './components/Overlay.vue'
 import Portal from './components/Portal.vue'
 import Root from './components/Root.vue'
 
-interface DrawerNamespace {
-  Root: typeof Root
-  Content: typeof Content
-  Overlay: typeof Overlay
-  Trigger: typeof DialogTrigger
-  Portal: typeof Portal
-  Handle: typeof Handle
-  Close: typeof DialogClose
-  Title: typeof DialogTitle
-  Description: typeof DialogDescription
-}
-
-export const Drawer: DrawerNamespace = {
+export const Drawer = {
   Root,
   Content,
   Overlay,
