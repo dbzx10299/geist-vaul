@@ -46,14 +46,14 @@
     "vue-remove-scroll": "^1.0.2"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "^4.2.1",
+    "@tailwindcss/vite": "^4.2.2",
     "@tsdown/css": "^0.21.4",
     "@types/node": "^25.5.0",
     "@vitejs/plugin-vue": "^6.0.5",
     "@vitest/browser-playwright": "^4.1.0",
     "bumpp": "^11.0.1",
     "playwright": "^1.58.2",
-    "tailwindcss": "^4.2.1",
+    "tailwindcss": "^4.2.2",
     "tsdown": "^0.21.3",
     "typescript": "^5.9.3",
     "unplugin-vue": "^7.1.1",
@@ -65,10 +65,5 @@
   },
   "peerDependencies": {
     "vue": "^3.0.0"
-  },
-  "overrides": {
-    "@tailwindcss/vite": {
-      "vite": "^8.0.0"
-    }
   }
 }
